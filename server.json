@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.stackresolve/stackresolve",
+  "title": "StackResolve",
+  "description": "Web intelligence for AI agents: find, compare, and audit software for a task; scored registry of agent-ready tools and MCP servers; structured company research. Registry reads need no key.",
+  "version": "0.3.1",
+  "websiteUrl": "https://stackresolve.dev",
+  "repository": {
+    "url": "https://github.com/autorevai/stackresolve",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.stackresolve.dev/mcp",
+      "headers": [
+        {
+          "name": "x-api-key",
+          "description": "StackResolve API key. Optional for registry reads (search_tools, get_profile, compare_products, list_registry); required for metered tools (resolve, how_to, audit, research). Free key at https://stackresolve.dev/developers.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

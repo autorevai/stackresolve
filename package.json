@@ -1,0 +1,57 @@
+{
+  "name": "stackresolve",
+  "version": "0.3.1",
+  "description": "Official SDK + CLI for the StackResolve API (AgentReady + CompanyData). Install globally for the `stackresolve` command, or import the SDK.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "stackresolve": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "agent",
+    "agent-tools",
+    "agentready",
+    "ai-agents",
+    "claude-code",
+    "cli",
+    "codex",
+    "companydata",
+    "cursor",
+    "llms-txt",
+    "mcp",
+    "mcp-server",
+    "sdk",
+    "stackresolve"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  },
+  "homepage": "https://stackresolve.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/autorevai/stackresolve.git"
+  },
+  "bugs": {
+    "url": "https://github.com/autorevai/stackresolve/issues"
+  }
+}

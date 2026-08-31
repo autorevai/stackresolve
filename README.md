@@ -2,15 +2,26 @@
 
 Official TypeScript/Node SDK for the [StackResolve](https://stackresolve.dev) API.
 
-StackResolve is web intelligence for AI agents: find, compare, and audit software for a
-task; a scored registry of agent-ready tools and MCP servers; structured company research.
-Three surfaces, one API: REST, a hosted MCP server, and this CLI/SDK. Registry reads are
-free and need no key.
+StackResolve helps agents discover, evaluate, select, install, and use software
+(AgentReady), and compresses web research into structured company data calls
+(CompanyData). This SDK is a thin, typed wrapper over the live REST API.
 
-- Site and docs: https://stackresolve.dev
-- REST: https://api.stackresolve.dev (OpenAPI at /openapi.json, llms.txt at /llms.txt)
-- Hosted MCP (streamable HTTP): https://mcp.stackresolve.dev/mcp
-- MCP server registry for agents: https://stackresolve.dev/mcp-servers
+## One line for your coding agent
+
+```bash
+npx stackresolve@latest install
+```
+
+That mints an API key if you have none, registers the hosted MCP server for every coding
+agent on the machine (Claude Code, Cursor, Codex, Windsurf, VS Code), writes the
+StackResolve skill to `~/.claude/skills/stackresolve/SKILL.md`, and verifies the key
+against the API. It is safe to re-run, and it backs up every file it changes.
+
+```bash
+npx stackresolve@latest install --dry-run     # show what would change
+npx stackresolve@latest install --cursor      # one agent only
+npx stackresolve@latest install --project --rules   # also wire up the current repo
+```
 
 ## MCP server
 
@@ -62,11 +73,11 @@ stackresolve company vercel.com
 stackresolve --help
 ```
 
-## SDK
 ## Install
 
 ```bash
-npm install stackresolve
+npm install stackresolve      # SDK
+npm i -g stackresolve         # CLI
 ```
 
 Requires Node 18+ (uses the built-in global `fetch`). No runtime dependencies.
@@ -149,6 +160,29 @@ CompanyData:
 Monitors + account (API key required):
 `listMonitors()`, `addMonitor(slug, opts?)`, `runMonitorNow(slug)`,
 `getUsage()`, `getMyProfile()`.
+
+## Other languages and frameworks
+
+Python SDK:
+
+```bash
+pip install stackresolve
+```
+
+LangChain tools, so an agent can pick software and research companies without a
+search-and-scrape loop:
+
+```bash
+pip install langchain-stackresolve
+```
+
+```python
+from langchain_stackresolve import StackResolveToolkit
+tools = StackResolveToolkit().get_tools()
+```
+
+REST directly: `https://api.stackresolve.dev`, OpenAPI at `/openapi.json`, `llms.txt` at
+`/llms.txt`.
 
 ## License
 

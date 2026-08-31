@@ -3,7 +3,7 @@
   "name": "dev.stackresolve/stackresolve",
   "title": "StackResolve",
   "description": "Find, compare, and audit software for AI agents. Scored registry of tools and MCP servers.",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "websiteUrl": "https://stackresolve.dev",
   "repository": {
     "url": "https://github.com/autorevai/stackresolve",

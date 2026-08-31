@@ -1,7 +1,7 @@
 {
   "name": "stackresolve",
-  "version": "0.3.1",
-  "description": "Official SDK + CLI for the StackResolve API (AgentReady + CompanyData). Install globally for the `stackresolve` command, or import the SDK.",
+  "version": "0.4.0",
+  "description": "Official SDK + CLI for StackResolve (AgentReady + CompanyData). `npx stackresolve install` wires the MCP server and skill into every coding agent on your machine.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -44,6 +44,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^22.7.0",
     "typescript": "^5.6.0"
   },
   "homepage": "https://stackresolve.dev",
